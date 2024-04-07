@@ -20,11 +20,11 @@ app.use(cors());
 const db = knex({
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
+      host: 'dpg-co931b20si5c7395itt0-a.ohio-postgres.render.com',
       port: 5432,
-      user: 'postgres',
-      password: '1123',
-      database: 'smartbrain',
+      user: 'smartbraindb_8edd_user',
+      password: 'Fpf2eQ9gtLcir4CZWkhg0VVR7aIHEG2l',
+      database: 'postgres://smartbraindb_8edd_user:Fpf2eQ9gtLcir4CZWkhg0VVR7aIHEG2l@dpg-co931b20si5c7395itt0-a/smartbraindb_8edd',
     },
   });
 
@@ -66,8 +66,8 @@ app.post('/imageurl', (req, res) => {
 
 
 
-app.listen(3000, ()=> {
-    console.log('app is running on port 3000');
+app.listen(process.env.PORT || 3000, ()=> {
+    console.log(`app is running on port ${process.env.PORT}`);
    
 })
 
