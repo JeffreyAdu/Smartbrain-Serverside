@@ -21,6 +21,7 @@ const db = knex({
     client: 'pg',
     connection: {
       connectionString: process.env.DATABASE_URL,
+      ssl: {rejectUnauthorized: false},
       host: 'dpg-co931b20si5c7395itt0-a',
       port: 5432,
       user: 'smartbraindb_8edd_user',
