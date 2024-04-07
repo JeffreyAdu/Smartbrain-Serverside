@@ -20,16 +20,14 @@ app.use(cors());
 const db = knex({
     client: 'pg',
     connection: {
-      host: 'dpg-co931b20si5c7395itt0-a.ohio-postgres.render.com',
-      port: 5432,
-      user: 'smartbraindb_8edd_user',
-      password: 'Fpf2eQ9gtLcir4CZWkhg0VVR7aIHEG2l',
-      database: 'postgres://smartbraindb_8edd_user:Fpf2eQ9gtLcir4CZWkhg0VVR7aIHEG2l@dpg-co931b20si5c7395itt0-a/smartbraindb_8edd',
-    },
+      connectionString: process.env.DATABASE_URL,
+      ssl: true
+    }
   });
+  
 
 
-
+console.log(db.connection.port);
 app.get('/', (req, res) =>{
     res.send('success!');
 })
