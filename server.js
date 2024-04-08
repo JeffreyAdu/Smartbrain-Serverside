@@ -15,9 +15,7 @@ const app = express();
 
 
 app.use(express.json());
-app.use(cors({
-    origin: 'http://localhost:5173' // Adjust this to match the origin of your frontend app
-  }));
+app.use(cors());
 
 const db = knex({
     client: 'pg',
