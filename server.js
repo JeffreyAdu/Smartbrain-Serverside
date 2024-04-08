@@ -15,12 +15,15 @@ const app = express();
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173' // Adjust this to match the origin of your frontend app
+  }));
 
 const db = knex({
     client: 'pg',
     connection: {
       connectionString: process.env.DATABASE_URL,
+      ssl: true,
       host: process.env.DATABASE_HOST,
       port: process.env.DATABASE_PORT,
       user: process.env.DATABASE_USERNAME,
