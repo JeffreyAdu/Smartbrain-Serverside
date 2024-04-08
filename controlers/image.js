@@ -1,10 +1,3 @@
-// const Clarifai = require ('clarifai');
-
-// const app = new Clarifai.App({
-//     apikey: '876b4c63f3eb4936b0956b87abc2307d'
-// });
-
-// app.models.pred
 
 const handleApiCall =( req, res) => {
     const {input} = req.body; 
