@@ -1,10 +1,9 @@
 
 const handleApiCall =( req, res) => {
     const {input} = req.body; 
-    console.log(input);
     const returnClarifaiRequest = (inputInfo) => {
             // Your PAT (Personal Access Token) can be found in the portal under Authentification
-            const PAT = '9afbe147474e407fa86251ba9c1afcb3';
+            const PAT =  process.env.EPAT ;
             // Specify the correct user_id/app_id pairings
             // Since you're making inferences outside your app's scope
             const USER_ID = 'jeffrey';       
